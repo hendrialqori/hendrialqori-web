@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-2: #262626;
+  --color-ink-3: #404040;
+  --color-muted: #525252;
+  --color-line: #e8e8e8;
+  --color-line-strong: #d4d4d4;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f7f7;
+  --color-surface-3: #f4f4f4;
+  --color-accent: #b9ff66;
+  --color-status: #16a34a;
+  --color-dark-line: #262626;
+  --color-dark-muted: #a3a3a3;
+  --color-dark-body: #d4d4d4;
+
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --radius-*: initial; /* kill all radius utilities: the design is square */
+  --container-frame: 1200px;
+}
+
+:root {
+  --pad: clamp(20px, 4vw, 48px); /* horizontal padding of every cell */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+/* In a layer so Tailwind utilities (text-*, outline-*) can override these defaults. */
+@layer base {
+  a {
+    color: inherit;
+  }
+
+  /* Visible focus on every interactive element; accent outline on dark sections. */
+  :where(a, button):focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+  .on-dark :where(a, button):focus-visible {
+    outline-color: var(--color-accent);
+  }
+}
+
+/* Horizontal cell padding. */
+@utility px-pad {
+  padding-inline: var(--pad);
+}
+
+/* Pull a block out of its padded section so its lines touch both frame edges. */
+@utility bleed {
+  margin-inline: calc(var(--pad) * -1);
+}
+@utility bleed-w {
+  width: calc(100% + 2 * var(--pad));
+  max-width: none;
+}
+
+/* Hero grid background. */
+@utility hero-grid {
+  background-color: #fff;
+  background-image:
+    radial-gradient(
+      ellipse 70% 65% at 50% 45%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 60%,
+      #fff 100%
+    ),
+    linear-gradient(#e9e9e9 1px, transparent 1px),
+    linear-gradient(90deg, #e9e9e9 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    56px 56px,
+    56px 56px;
+  background-position: center;
+}

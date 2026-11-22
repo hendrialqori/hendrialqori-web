@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Case study | Hendri Alqori</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0A0A0A}a:hover{color:#404040}
+</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #0A0A0A; background: #FFFFFF; padding: 0 clamp(12px, 2vw, 24px)">
+<div style="max-width: 1200px; margin: 0 auto; border-left: 1px solid #E8E8E8; border-right: 1px solid #E8E8E8">
+
+<!-- NAV -->
+<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px clamp(20px, 4vw, 48px); border-bottom: 1px solid #E8E8E8">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0A0A0A; font-weight: 700; font-size: 16px">
+Hendri Alqori
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; font-size: 14px; font-weight: 500; color: #404040; text-decoration: none">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>
+Back to all work</a>
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 18px; background: {{accent}}; color: #0A0A0A; border: 1px solid #0A0A0A; font-size: 14px; font-weight: 600; text-decoration: none">Start a project
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+</a>
+</nav>
+</header>
+
+<!-- HEADER + PROJECT INFO -->
+<section style="padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252; letter-spacing: 0.04em">
+<span style="background: {{accent}}; color: #0A0A0A; padding: 2px 6px">CASE STUDY</span>{{p.category}}</p>
+<h1 style="margin: 0; max-width: 960px; font-size: clamp(44px, 7vw, 88px); line-height: 1; letter-spacing: -0.04em; font-weight: 700">{{p.name}}</h1>
+<p style="margin: 0; max-width: 720px; font-size: clamp(18px, 2vw, 22px); line-height: 1.55; color: #404040">{{p.summary}}</p>
+<dl style="margin-top: 12px; margin-bottom: 0; margin-left: calc(-1 * clamp(20px, 4vw, 48px)); margin-right: calc(-1 * clamp(20px, 4vw, 48px)); display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: #E8E8E8; border-top: 1px solid #E8E8E8; border-bottom: 1px solid #E8E8E8">
+<div style="background: #FFFFFF; padding: 24px clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 12px; color: #525252">Client</dt><dd style="margin: 0; font-size: 16px; font-weight: 600">{{p.client}}</dd></div>
+<div style="background: #FFFFFF; padding: 24px clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 12px; color: #525252">Type</dt><dd style="margin: 0; font-size: 16px; font-weight: 600">{{p.type}}</dd></div>
+<div style="background: #FFFFFF; padding: 24px clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 12px; color: #525252">Year</dt><dd style="margin: 0; font-size: 16px; font-weight: 600">{{p.year}}</dd></div>
+<sc-if value="{{p.hasDuration}}" hint-placeholder-val="{{ true }}"><div style="background: #FFFFFF; padding: 24px clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 12px; color: #525252">Duration</dt><dd style="margin: 0; font-size: 16px; font-weight: 600">{{p.duration}}</dd></div></sc-if>
+<div style="background: #FFFFFF; padding: 24px clamp(20px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center"><a href="{{p.url}}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px">{{p.urlLabel}}
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+</dl>
+</section>
+
+<!-- HERO IMAGE -->
+<div style="padding: clamp(40px, 5vw, 64px) clamp(20px, 4vw, 48px); border-bottom: 1px solid #E8E8E8">
+<div style="background: {{p.color}}; padding: clamp(24px, 6vw, 80px) clamp(24px, 6vw, 80px) 0">
+<div style="background: #FFFFFF; box-shadow: 0 -2px 30px rgba(0,0,0,0.08)">
+<div style="display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid #EEEEEE"><span style="width: 10px; height: 10px; background: #E5E5E5"></span><span style="width: 10px; height: 10px; background: #E5E5E5"></span><span style="width: 10px; height: 10px; background: #E5E5E5"></span></div>
+<img src="{{p.image}}" alt="Screenshot of the {{p.name}} website" style="display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: top">
+</div>
+</div>
+</div>
+
+<!-- 01 OVERVIEW -->
+<section style="padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px) 0; border-bottom: 1px solid #E8E8E8; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252; letter-spacing: 0.04em"><span style="background: {{accent}}; color: #0A0A0A; padding: 2px 6px; margin-right: 6px">01</span>OVERVIEW</p>
+<h2 style="margin: 0; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.03em; font-weight: 700">What's on the site</h2>
+</div>
+<p style="margin: 0; max-width: 420px; font-size: 16px; line-height: 1.65; color: #404040">{{p.overviewIntro}}</p>
+</div>
+<img src="{{p.overviewImage}}" alt="Overview of the {{p.name}} website" style="display: block; margin-left: calc(-1 * clamp(20px, 4vw, 48px)); margin-right: calc(-1 * clamp(20px, 4vw, 48px)); width: calc(100% + 2 * clamp(20px, 4vw, 48px)); max-width: none; height: auto; border-top: 1px solid #E8E8E8">
+</section>
+
+<!-- 01 CONTEXT & PROBLEM -->
+<section style="display: flex; flex-wrap: wrap; gap: 1px; background: #E8E8E8; border-bottom: 1px solid #E8E8E8">
+<div style="flex: 1 1 300px; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252; letter-spacing: 0.04em"><span style="background: {{accent}}; color: #0A0A0A; padding: 2px 6px; margin-right: 6px">02</span>CONTEXT</p>
+<h2 style="margin: 0; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.03em; font-weight: 700">The client &amp; the problem</h2>
+</div>
+<div style="flex: 2 1 520px; min-width: 0; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #262626">{{p.overview}}</p>
+<div style="padding: 24px 28px; background: #F7F7F7; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252">BEFORE THIS PROJECT</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #262626">{{p.problem}}</p>
+</div>
+</div>
+</section>
+
+<!-- 02 GOALS -->
+<section style="display: flex; flex-wrap: wrap; gap: 1px; background: #E8E8E8; border-bottom: 1px solid #E8E8E8">
+<div style="flex: 1 1 300px; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252; letter-spacing: 0.04em"><span style="background: {{accent}}; color: #0A0A0A; padding: 2px 6px; margin-right: 6px">03</span>GOALS</p>
+<h2 style="margin: 0; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.03em; font-weight: 700">What we set out to do</h2>
+</div>
+<ol style="flex: 2 1 520px; min-width: 0; margin: 0; padding: 0; list-style: none; background: #FFFFFF; display: flex; flex-direction: column">
+<sc-for list="{{p.goals}}" as="g" hint-placeholder-count="3">
+<li style="{{g.style}}"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #525252">{{g.num}}</span><span style="font-size: 18px; font-weight: 600; line-height: 1.5">{{g.text}}</span></li>
+</sc-for>
+</ol>
+</section>
+
+<!-- 03 ROLE & SCOPE -->
+<section style="display: flex; flex-wrap: wrap; gap: 1px; background: #E8E8E8; border-bottom: 1px solid #E8E8E8">
+<div style="flex: 1 1 300px; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252; letter-spacing: 0.04em"><span style="background: {{accent}}; color: #0A0A0A; padding: 2px 6px; margin-right: 6px">04</span>MY ROLE</p>
+<h2 style="margin: 0; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.03em; font-weight: 700">What I handled</h2>
+</div>
+<div style="flex: 2 1 520px; min-width: 0; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #262626">{{p.role}}</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #E8E8E8; border: 1px solid #E8E8E8">
+<sc-for list="{{p.scope}}" as="sc" hint-placeholder-count="3">
+<div style="background: #FFFFFF; padding: 20px; display: flex; align-items: center; gap: 10px"><span style="display: inline-flex; width: 22px; height: 22px; align-items: center; justify-content: center; background: {{accent}}; border: 1px solid #0A0A0A"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span style="font-size: 15px; font-weight: 600">{{sc.label}}</span></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- 04 SOLUTION -->
+<section style="display: flex; flex-wrap: wrap; gap: 1px; background: #E8E8E8; border-bottom: 1px solid #E8E8E8">
+<div style="flex: 1 1 300px; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252; letter-spacing: 0.04em"><span style="background: {{accent}}; color: #0A0A0A; padding: 2px 6px; margin-right: 6px">05</span>SOLUTION</p>
+<h2 style="margin: 0; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.03em; font-weight: 700">Key decisions</h2>
+</div>
+<div style="flex: 2 1 520px; min-width: 0; background: #FFFFFF; display: flex; flex-direction: column">
+<sc-for list="{{p.solutions}}" as="d" hint-placeholder-count="3">
+<div style="{{d.style}}">
+<span style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0A0A0A; color: {{accent}}; font-family: 'JetBrains Mono', monospace; font-size: 13px">{{d.num}}</span>
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em">{{d.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #404040">{{d.text}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<sc-if value="{{p.hasResults}}" hint-placeholder-val="{{ true }}">
+<!-- 05 RESULTS -->
+<section style="display: flex; flex-wrap: wrap; gap: 1px; background: #E8E8E8; border-bottom: 1px solid #E8E8E8">
+<div style="flex: 1 1 300px; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #525252; letter-spacing: 0.04em"><span style="background: {{accent}}; color: #0A0A0A; padding: 2px 6px; margin-right: 6px">06</span>RESULTS</p>
+<h2 style="margin: 0; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.03em; font-weight: 700">What changed</h2>
+</div>
+<div style="flex: 2 1 520px; min-width: 0; background: #FFFFFF; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: #E8E8E8; border: 1px solid #E8E8E8">
+<div style="background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em">[00]</span><span style="font-size: 14px; color: #525252">[Metric, e.g. weeks to launch]</span></div>
+<div style="background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em">[00]</span><span style="font-size: 14px; color: #525252">[Metric, e.g. orders per month]</span></div>
+<div style="background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em">[00]</span><span style="font-size: 14px; color: #525252">[Metric, e.g. page load in seconds]</span></div>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #262626">[WHAT CHANGED FOR THE CLIENT? No numbers? Describe it, e.g. the client now updates the catalog without a developer.]</p>
+</div>
+</section>
+
+</sc-if>
+
+<sc-if value="{{p.hasTestimonial}}" hint-placeholder-val="{{ true }}">
+<!-- TESTIMONIAL -->
+<section style="padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 48px); border-bottom: 1px solid #E8E8E8; background: {{accent}}">
+<figure style="margin: 0; max-width: 860px; display: flex; flex-direction: column; gap: 24px">
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5H3v8h4"></path><path d="M14 21c3 0 7-1 7-8V5h-7v8h4"></path></svg>
+<blockquote style="margin: 0; font-size: clamp(22px, 3vw, 34px); line-height: 1.35; letter-spacing: -0.02em; font-weight: 600">"[CLIENT TESTIMONIAL: one or two sentences, real words from the client.]"</blockquote>
+<figcaption style="font-size: 15px; color: #262626"><strong style="font-weight: 700">[CLIENT NAME]</strong>, [POSITION] at {{p.client}}</figcaption>
+</figure>
+</section>
+
+</sc-if>
+
+<!-- CTA + FOOTER -->
+<section style="padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 48px) 0; background: #0A0A0A; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px">
+<h2 style="margin: 0; max-width: 640px; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700">Need a website like this? <span style="color: {{accent}}">Let's talk.</span></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="mailto:dev.hendrialqori@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; box-sizing: border-box; padding: 0 26px; background: {{accent}}; color: #0A0A0A; font-size: 16px; font-weight: 600; text-decoration: none">Email me</a>
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; box-sizing: border-box; padding: 0 26px; border: 1px solid #525252; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none">Chat on WhatsApp</a>
+</div>
+<p style="margin-top: 0; margin-bottom: 0; margin-left: calc(-1 * clamp(20px, 4vw, 48px)); margin-right: calc(-1 * clamp(20px, 4vw, 48px)); flex-basis: calc(100% + 2 * clamp(20px, 4vw, 48px)); box-sizing: border-box; padding: 24px clamp(20px, 4vw, 48px); border-top: 1px solid #262626; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A3A3A3">© 2026 Hendri Alqori · Built with Vue</p>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#B9FF66","options":["#B9FF66","#FFB86B","#FFE14D","#8CD3FF"]},"project":{"editor":"enum","default":"hutama","options":["hutama","ratu","fractal"]},"$preview":{"width":1440,"height":5400}}'>
+class Component extends DCLogic {
+projects() {
+const ph = (t) => t;
+return [
+{ id: 'hutama', overviewImage: '/_blob/018650baab33c5820b037862887b8c7b', overviewIntro: 'A single-page company profile that takes visitors from who the company is to how to reach them.',
+ name: 'Hutama Maju Abadi', category: 'LANDING PAGE', type: 'Company profile landing page', client: 'PT Hutama Maju Abadi', color: '#1C2B3A', image: '/_blob/8ab4796b56488aa4b61e85b014bbfb3c',
+year: '2026', duration: '', url: 'https://hutamamajuabadi.com', urlLabel: 'hutamamajuabadi.com',
+summary: 'A company profile landing page for PT Hutama Maju Abadi, a Bandung-based company in procurement of goods and services, and construction.',
+overview: 'PT Hutama Maju Abadi works across three business lines: procurement of goods, procurement of services and construction.',
+problem: 'PT Hutama Maju Abadi had no website. New business came almost entirely through personal referrals, which made it hard to reach partners outside their existing network. They needed an online presence to promote their services and look credible to new clients.',
+goals: ['Look professional and credible to new business partners', 'Explain the three business lines clearly: goods procurement, service procurement and construction', 'Make it easy for potential clients to get in touch', 'Replace the PDF company profile with a link that’s easy to share'],
+role: 'I designed, built and launched the website myself, from the visual design in Figma to a fast, responsive site.',
+scope: ['UI Design', 'Frontend', 'Deployment'],
+solutions: [
+{ title: 'Clear business lines', text: 'The three services sit side by side, so visitors understand what the company does within seconds.' },
+{ title: 'Trust through people and values', text: 'Vision and mission, company values and the management team are shown openly to build credibility with new partners.' },
+{ title: 'Inquiries straight to WhatsApp', text: 'The team lives on WhatsApp, so the contact form sends messages there directly and leads get a fast reply.' },
+{ title: 'Fast, elegant and mobile-ready', text: 'A clean corporate look that loads fast and works smoothly on phones.' } ],
+hasResults: false, hasTestimonial: false },
+{ id: 'ratu', overviewImage: '/_blob/48dfe2ec4d0a6731f1942fb3c37bac5a', overviewIntro: 'A soft, elegant catalog that lets customers browse every gift and order in a few taps.',
+ name: 'Ratu Florist', category: 'CATALOG WEBSITE', type: 'Product catalog website', client: 'Ratu Florist', color: '#62735C', image: '/_blob/9bd973771318de043a7384208269323f',
+year: '2026', duration: '', url: 'https://ratufloriststore.com', urlLabel: 'ratufloriststore.com',
+summary: 'An online catalog for Ratu Florist, a florist and parcel shop in Tangerang offering bouquets, hampers and parcels for every special moment.',
+overview: 'Ratu Florist sells flower bouquets, money bouquets, hampers, flower boards and parcels.',
+problem: 'Ratu Florist had no website. Products were spread across Instagram, WhatsApp and Shopee, so customers had no single place to see everything. The team spent hours answering the same price and availability questions one chat at a time.',
+goals: ['Show prices and promos clearly so customers don\u2019t need to ask one by one', 'Let customers order directly via WhatsApp, Shopee or Tokopedia', 'Look professional and match the brand\u2019s soft, elegant style'],
+role: 'I handled the whole project myself: designing the storefront, building the frontend and backend, and launching it live. Behind the catalog sits a custom CMS where the team manages products, categories and labels, plus an analytics dashboard that tracks visitors and order clicks per channel.',
+scope: ['UI Design', 'Frontend', 'Backend', 'Deployment'],
+solutions: [
+{ title: 'Browse by category', text: 'The catalog is filtered into five categories, so customers find the right gift without scrolling through everything.' },
+{ title: 'Prices and promos up front', text: 'Every product shows its price, discount and a badge such as Best Seller, New or Lebaran Promo, so customers do not need to ask one by one.' },
+{ title: 'Order on the channel they prefer', text: 'Customers order directly via WhatsApp, Shopee or Tokopedia, keeping the existing sales channels in one flow.' },
+{ title: 'A CMS the team runs on their own', text: 'Products, categories, labels and prices are managed from an admin dashboard, so the catalog stays up to date without a developer.' },
+{ title: 'Analytics built around sales', text: 'The dashboard tracks visitors, pageviews and order clicks on WhatsApp, Shopee and Tokopedia, plus conversion rate per product, so the owner knows what sells and where buyers come from.' } ],
+hasResults: false, hasTestimonial: false },
+{ id: 'fractal', overviewImage: '/_blob/a2c2c92618f9e722fcdc86f8f7fc2191', overviewIntro: 'A focused landing page that explains a broad service offering and leads doctors to book a call.',
+ name: 'Fractal CTS', category: 'LANDING PAGE', type: 'Service landing page', client: 'Fractal CTS', color: '#2F8FA3', image: '/_blob/fa627a6330eba1c0270b987083df2233',
+year: '2025', duration: '', url: 'https://fractalcts.com/', urlLabel: 'fractalcts.com',
+summary: 'A landing page for Fractal CTS, a consulting firm that helps ophthalmologists build their own practice without the learning curve.',
+overview: 'Fractal CTS supports eye doctors from start-up planning to running and growing their clinic.',
+problem: 'Fractal CTS already had a website, but it looked outdated and did little to win new clients. Doctors found them through Google and referrals, so the site needed to make a stronger first impression and turn visitors into consultation calls.',
+goals: ['Replace the old website with a modern, professional look', 'Explain five services in a simple, easy-to-scan way', 'Turn visitors into free consultation bookings'],
+role: 'I handled the whole project myself: redesigning the site, building the frontend and backend, connecting the consultation form, and launching it live.',
+scope: ['UI Design', 'Frontend', 'Backend', 'Deployment'],
+solutions: [
+{ title: 'Five services, one glance', text: 'Practice start-up, infrastructure and technology, growth consulting, business training and equipment supply are laid out as clear, equal cards.' },
+{ title: 'A simple 3-step process', text: 'From initial consultation to launch, the process is reduced to three steps so doctors know exactly what to expect.' },
+{ title: 'One clear next step', text: 'Every section leads to scheduling a free practice growth call, with a consultation form at the end of the page and a Schedule Appointment button that is always in view.' } ],
+hasResults: false, hasTestimonial: false }
+];
+}
+renderVals() {
+const list = this.projects();
+const id = this.props.project ?? 'hutama';
+let src = list.find((x) => x.id === id);
+if (!src) src = list[0];
+const pad = 'clamp(20px, 4vw, 48px)';
+const two = (n) => (n < 10 ? '0' + n : '' + n);
+const p = Object.assign({}, src);
+p.hasDuration = !!src.duration;
+p.goals = src.goals.map((t, i) => ({ num: 'G' + (i + 1), text: t,
+style: 'display: flex; gap: 20px; align-items: baseline; padding: 28px ' + pad + ';' + (i < src.goals.length - 1 ? ' border-bottom: 1px solid #E8E8E8;' : '') }));
+p.scope = src.scope.map((l) => ({ label: l }));
+p.solutions = src.solutions.map((d, i) => ({ num: two(i + 1), title: d.title, text: d.text,
+style: 'display: flex; gap: 24px; padding: 32px ' + pad + ';' + (i < src.solutions.length - 1 ? ' border-bottom: 1px solid #E8E8E8;' : '') }));
+return {
+accent: this.props.accent ?? '#B9FF66',
+p: p
+};
+}
+}
+</script>
+</body>
+</html>
